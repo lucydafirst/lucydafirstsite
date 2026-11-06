@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lucy First — Edmonton-based DJ and electronic music producer blending breakbeat, electro, hip-hop energy and deep bass.">
+  <meta name="theme-color" content="#0b0b0b">
+  <title>Lucy First — DJ / Producer</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #141414;
+      --ink: #f3f0e9;
+      --muted: #aaa69d;
+      --line: #34332f;
+      --acid: #d6ff3f;
+      --orange: #ff6b35;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--acid); }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; border-bottom: 1px solid var(--line);
+      gap: 20px;
+    }
+    .wordmark { font-weight: 900; letter-spacing: .12em; font-size: 1rem; }
+    .wordmark span { color: var(--acid); }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; }
+    .hero {
+      min-height: 690px; display: grid; align-items: center;
+      padding: 90px 0 100px; position: relative; overflow: hidden;
+    }
+    .hero:after {
+      content: "LF"; position: absolute; right: -25px; top: 30px;
+      font-size: clamp(18rem, 42vw, 40rem); line-height: .8;
+      font-weight: 900; letter-spacing: -.12em; color: #151515;
+      z-index: 0; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; }
+    .eyebrow {
+      color: var(--acid); font-size: .76rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .2em;
+    }
+    h1 {
+      margin: 18px 0; font-size: clamp(4rem, 12vw, 9.5rem);
+      line-height: .82; letter-spacing: -.09em; text-transform: uppercase;
+    }
+    h1 span { color: var(--acid); display: block; }
+    .hero p { max-width: 560px; color: #d0ccc3; font-size: clamp(1rem, 2vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button {
+      display: inline-block; padding: 13px 19px; border: 1px solid var(--acid);
+      color: var(--bg); background: var(--acid); font-size: .78rem;
+      font-weight: 800; text-transform: uppercase; letter-spacing: .12em;
+    }
+    .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+    section { padding: 86px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
+    .section-head h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.7rem); line-height: 1; letter-spacing: -.06em; text-transform: uppercase; }
+    .section-number { color: var(--acid); font-size: .8rem; letter-spacing: .15em; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; }
+    .lead { font-size: clamp(1.25rem, 2.7vw, 2rem); line-height: 1.35; margin: 0; }
+    .muted { color: var(--muted); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fact { background: var(--panel); padding: 20px; border: 1px solid var(--line); }
+    .fact strong { display: block; color: var(--acid); font-size: .75rem; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 8px; }
+    .fact span { font-size: .95rem; }
+    .music-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .music-card { background: var(--panel); border: 1px solid var(--line); padding: 26px; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between; }
+    .music-card h3 { font-size: 1.5rem; margin: 0 0 8px; letter-spacing: -.04em; }
+    .music-card p { color: var(--muted); margin: 0; }
+    .arrow { color: var(--acid); font-size: 1.4rem; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service { border-top: 2px solid var(--acid); background: var(--panel); padding: 22px; }
+    .service h3 { margin: 0 0 8px; text-transform: uppercase; font-size: 1rem; letter-spacing: .05em; }
+    .service p { color: var(--muted); font-size: .92rem; margin: 0; }
+    .quote {
+      padding: 54px; background: var(--acid); color: var(--bg);
+      font-size: clamp(1.5rem, 4vw, 3rem); line-height: 1.12;
+      font-weight: 900; letter-spacing: -.05em; text-transform: uppercase;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .contact-grid h2 { font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: .9; letter-spacing: -.08em; margin: 0 0 22px; text-transform: uppercase; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-links a { border-bottom: 1px solid var(--line); padding: 12px 0; display: flex; justify-content: space-between; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .75rem; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 720px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .hero { min-height: 590px; padding: 75px 0; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .services { grid-template-columns: 1fr; }
+      .quote { padding: 30px; }
+    }
+    @media (max-width: 480px) {
+      .music-grid, .facts { grid-template-columns: 1fr; }
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      nav { font-size: .7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#top">LUCY<span> FIRST</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#sound">Sound</a>
+      <a href="#services">Bookings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="hero-content">
+        <div class="eyebrow">Edmonton, Alberta · DJ / Producer</div>
+        <h1>Lucy <span>First.</span></h1>
+        <p>Breaks, bass and underground energy. A DJ and electronic music producer moving between hip-hop roots, electro breaks and futuristic sound design.</p>
+        <div class="actions">
+          <a class="button" href="#sound">Explore the sound</a>
+          <a class="button secondary" href="#contact">Booking / Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><h2>Independent by nature.</h2><span class="section-number">01 / ABOUT</span></div>
+        <div class="about-grid">
+          <p class="lead">Lucy First — formerly known as Lucydafirst — is a Canadian DJ, producer and audio creative with over a decade of experience behind the decks and on stage.</p>
+          <div>
+            <p class="muted">Rooted in hip-hop and old-school breaks, her sound pushes into electro, heavy low end and forward-thinking electronic textures. Her approach is built around movement, detail and personality: music with grit, bounce and a point of view.</p>
+            <p class="muted">From club nights and festival stages to sound work and independent releases, Lucy brings a hands-on understanding of music, performance and the culture around it.</p>
+            <div class="facts">
+              <div class="fact"><strong>Based in</strong><span>Edmonton, Alberta</span></div>
+              <div class="fact"><strong>In the game</strong><span>10+ years</span></div>
+              <div class="fact"><strong>Focus</strong><span>Breakbeat / Electro</span></div>
+              <div class="fact"><strong>Also</strong><span>Audio + event creative</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sound">
+      <div class="wrap">
+        <div class="section-head"><h2>Enter the frequency.</h2><span class="section-number">02 / SOUND</span></div>
+        <div class="music-grid">
+          <article class="music-card">
+            <div><h3>Original music</h3><p>Independent productions, bass-heavy ideas and evolving electronic experiments.</p></div>
+            <a class="arrow" href="https://open.spotify.com/" target="_blank" rel="noopener">↗ <span class="muted" style="font-size:.75rem">Add your Spotify artist link</span></a>
+          </article>
+          <article class="music-card">
+            <div><h3>DJ sets</h3><p>Breakbeat, electro, hip-hop influence and high-energy selections built for the room.</p></div>
+            <a class="arrow" href="https://soundcloud.com/" target="_blank" rel="noopener">↗ <span class="muted" style="font-size:.75rem">Add your SoundCloud link</span></a>
+          </article>
+          <article class="music-card">
+            <div><h3>Releases</h3><p>Find Lucy First releases and collaborations across streaming platforms.</p></div>
+            <a class="arrow" href="https://music.apple.com/" target="_blank" rel="noopener">↗ <span class="muted" style="font-size:.75rem">Add your Apple Music link</span></a>
+          </article>
+          <article class="music-card">
+            <div><h3>Visual world</h3><p>Underground culture, machines, movement, graffiti and the spaces in between.</p></div>
+            <a class="arrow" href="https://www.instagram.com/" target="_blank" rel="noopener">↗ <span class="muted" style="font-size:.75rem">Add your Instagram link</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><h2>What I do.</h2><span class="section-number">03 / BOOKINGS</span></div>
+        <div class="services">
+          <article class="service"><h3>DJ performances</h3><p>Club nights, festivals, showcases, private events and thoughtfully curated sets.</p></article>
+          <article class="service"><h3>Audio + sound</h3><p>Event audio support, stage and technical experience, and practical sound solutions.</p></article>
+          <article class="service"><h3>Music + collaboration</h3><p>Production, edits, creative collaborations and sound-focused projects.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="quote">“Built from the breaks. Driven by the bass. Always moving forward.”</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">04 / Get in touch</div>
+          <h2>Let's make<br>some noise.</h2>
+          <p class="muted">For bookings, collaborations, production enquiries or creative projects, send a message.</p>
+        </div>
+        <div class="contact-links">
+          <!-- Replace the email address and social URLs below with your real contact details. -->
+          <a href="mailto:YOUR_EMAIL@example.com"><span>Email / Booking</span><span>↗</span></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener"><span>Instagram</span><span>↗</span></a>
+          <a href="https://soundcloud.com/" target="_blank" rel="noopener"><span>SoundCloud</span><span>↗</span></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener"><span>YouTube</span><span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year"></span> LUCY FIRST</span>
+    <span>Independent sound. Edmonton, AB.</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
